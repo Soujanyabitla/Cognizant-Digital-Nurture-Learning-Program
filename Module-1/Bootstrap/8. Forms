@@ -1,0 +1,56 @@
+Exercise 8.1: Registration Form using form-control, form-check, and input-group
+ HTML Example:
+<div class="container mt-5">
+  <h2>Event Registration</h2>
+  <form>
+    <!-- Name Input -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name" placeholder="John Doe">
+    </div>
+
+    <!-- Email Input with Input Group -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <div class="input-group">
+        <span class="input-group-text">@</span>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+      </div>
+    </div>
+
+    <!-- Event Category Checkboxes -->
+    <div class="mb-3">
+      <label class="form-label">Choose Categories</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="tech" value="tech">
+        <label class="form-check-label" for="tech">Tech</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="art" value="art">
+        <label class="form-check-label" for="art">Art</label>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
+Exercise 8.2: Login Form using form-floating
+HTML Example:
+<div class="container mt-5" style="max-width: 400px;">
+  <h2>Login</h2>
+  <form>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+      <label for="loginEmail">Email address</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+      <label for="loginPassword">Password</label>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Login</button>
+  </form>
+</div>
