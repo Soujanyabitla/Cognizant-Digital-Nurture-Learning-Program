@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    #eventImage {
+      width: 200px;
+      margin-top: 20px;
+      border: 2px solid #444;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #eventImage.enlarged {
+      transform: scale(1.5);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #charCount {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    #confirmation {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+
+    #feeDisplay {
+      margin-top: 5px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Event Feedback Form</h2>
+
+  <form>
+    <!-- Phone number with onblur validation -->
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="e.g. 1234567890" onblur="validatePhone()" required>
+
+    <!-- Dropdown with onchange event to show fee -->
+    <label for="eventType">Select Event:</label>
+    <select id="eventType" onchange="showFee()">
+      <option value="">-- Choose an Event --</option>
+      <option value="workshop">Workshop ($20)</option>
+      <option value="seminar">Seminar ($15)</option>
+      <option value="festival">Festival ($10)</option>
+    </select>
+    <div id="feeDisplay"></div>
+
+    <!-- Feedback textarea with key events -->
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" rows="4" onkeyup="countChars()" onkeydown="countChars()"
+              placeholder="Type your feedback here..."></textarea>
+    <div id="charCount">Characters: 0</div>
+
+    <!-- Image with ondblclick to enlarge -->
+    <label>Event Highlight:</label>
+    <img id="eventImage" src="event1.jpg" alt="Event Image" title="Double-click to enlarge"
+         ondblclick="toggleImageSize()">
+
+    <!-- Submit button with onclick -->
+    <button type="button" onclick="submitForm()">Submit Feedback</button>
+    <div id="confirmation"></div>
+  </form>
+
+  <script>
+    function validatePhone() {
+      const phoneInput = document.getElementById("phone");
+      const phone = phoneInput.value;
+      const regex = /^\d{10}$/;
+      if (!regex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        phoneInput.focus();
+      }
+    }
+
+    function showFee() {
+      const eventType = document.getElementById("eventType").value;
+      let fee = '';
+      switch(eventType) {
+        case 'workshop': fee = "$20"; break;
+        case 'seminar': fee = "$15"; break;
+        case 'festival': fee = "$10"; break;
+        default: fee = '';
+      }
+      document.getElementById("feeDisplay").textContent = fee ? `Event Fee: ${fee}` : '';
+    }
+
+    function countChars() {
+      const text = document.getElementById("feedback").value;
+      document.getElementById("charCount").textContent = `Characters: ${text.length}`;
+    }
+
+    function toggleImageSize() {
+      const img = document.getElementById("eventImage");
+      img.classList.toggle("enlarged");
+    }
+
+    function submitForm() {
+      document.getElementById("confirmation").textContent = "Thank you! Your feedback has been submitted.";
+    }
+  </script>
+
+</body>
+</html>
