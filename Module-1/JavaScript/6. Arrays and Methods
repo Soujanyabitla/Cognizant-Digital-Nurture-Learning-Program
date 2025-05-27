@@ -1,0 +1,25 @@
+// Initial array of events
+let events = [
+  { name: "Community Clean-Up Day", category: "Environment" },
+  { name: "Jazz Night", category: "Music" },
+  { name: "Food Drive", category: "Charity" },
+  { name: "Rock Concert", category: "Music" },
+];
+
+// 1. Add new event using .push()
+events.push({ name: "Baking Workshop", category: "Workshop" });
+
+// 2. Use .filter() to get only music events
+const musicEvents = events.filter(event => event.category === "Music");
+
+// 3. Use .map() to create display cards (formatted strings)
+const displayCards = events.map(event => `${event.category} Event: ${event.name}`);
+
+console.log("All Events:");
+console.log(events);
+
+console.log("\nMusic Events:");
+console.log(musicEvents);
+
+console.log("\nDisplay Cards:");
+console.log(displayCards);
