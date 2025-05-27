@@ -1,0 +1,27 @@
+// Define Event class with constructor
+class Event {
+  constructor(name, date, seats) {
+    this.name = name;
+    this.date = new Date(date);
+    this.seats = seats;
+  }
+}
+
+// Add method to prototype to check seat availability
+Event.prototype.checkAvailability = function() {
+  return this.seats > 0;
+};
+
+// Create some event objects
+const event1 = new Event("Community Clean-Up Day", "2025-06-15", 10);
+const event2 = new Event("Food Drive", "2024-12-01", 0);
+
+// Check availability
+console.log(`${event1.name} available?`, event1.checkAvailability()); // true
+console.log(`${event2.name} available?`, event2.checkAvailability()); // false
+
+// List keys and values of an event object using Object.entries()
+console.log("Event1 details:");
+Object.entries(event1).forEach(([key, value]) => {
+  console.log(`${key}: ${value}`);
+});
