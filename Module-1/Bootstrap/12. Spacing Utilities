@@ -1,0 +1,68 @@
+Exercise 12.1: Applying Margin and Padding Utilities
+Margin (m-3, mt-4), Padding (p-2, py-5) Usage Example:
+<div class="container mt-4 p-3 border bg-light">
+  <h2 class="mb-3">Welcome to Our Event Portal</h2>
+
+  <section class="m-3 p-2 bg-white border">
+    <h4>Upcoming Events</h4>
+    <p class="py-5">
+      Discover amazing events happening near you. This section has vertical padding (`py-5`) for better spacing.
+    </p>
+  </section>
+
+  <section class="mt-4 p-3 bg-white border">
+    <h4>Register Now</h4>
+    <p class="p-2">
+      Fill out the registration form to secure your spot!
+    </p>
+  </section>
+</div>
+
+Exercise 12.2: Pricing Section with Spacing
+HTML Example:
+<div class="container my-5">
+  <h2 class="text-center mb-4">Pricing Plans</h2>
+  <div class="row g-4">
+    <!-- Basic Plan -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded text-center h-100">
+        <h3 class="mb-3">Basic</h3>
+        <p class="fs-1 fw-bold">$9 <small class="fs-5">/month</small></p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">Access to basic events</li>
+          <li class="mb-2">Email support</li>
+          <li class="mb-2">Community access</li>
+        </ul>
+        <button class="btn btn-outline-primary px-4 py-2">Select</button>
+      </div>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded text-center h-100 bg-primary text-white">
+        <h3 class="mb-3">Pro</h3>
+        <p class="fs-1 fw-bold">$29 <small class="fs-5">/month</small></p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">All Basic features</li>
+          <li class="mb-2">Priority support</li>
+          <li class="mb-2">Exclusive workshops</li>
+        </ul>
+        <button class="btn btn-light px-4 py-2">Select</button>
+      </div>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded text-center h-100">
+        <h3 class="mb-3">Enterprise</h3>
+        <p class="fs-1 fw-bold">$99 <small class="fs-5">/month</small></p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">All Pro features</li>
+          <li class="mb-2">Dedicated manager</li>
+          <li class="mb-2">Custom solutions</li>
+        </ul>
+        <button class="btn btn-outline-primary px-4 py-2">Select</button>
+      </div>
+    </div>
+  </div>
+</div>
