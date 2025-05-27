@@ -1,0 +1,49 @@
+HTML Form
+
+<form id="registrationForm">
+  <label>
+    Name:
+    <input type="text" name="name" required />
+  </label><br />
+
+  <label>
+    Email:
+    <input type="email" name="email" required />
+  </label><br />
+
+  <label>
+    Select Event:
+    <select name="event">
+      <option value="Jazz Night">Jazz Night</option>
+      <option value="AI Conference">AI Conference</option>
+      <option value="Football Match">Football Match</option>
+    </select>
+  </label><br />
+
+  <button type="submit">Register</button>
+</form>
+
+<div id="confirmation"></div>
+
+JavaScript
+
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // ✅ Prevent page reload
+
+  // ✅ Access form inputs using form.elements
+  const { name, email, event: eventSelect } = form.elements;
+
+  const userName = name.value;
+  const userEmail = email.value;
+  const selectedEvent = eventSelect.value;
+
+  // Display confirmation
+  const confirmation = document.getElementById("confirmation");
+  confirmation.innerHTML = `
+    <p>Thank you, <strong>${userName}</strong>!</p>
+    <p>You’ve successfully registered for <strong>${selectedEvent}</strong>.</p>
+    <p>Confirmation sent to: <em>${userEmail}</em></p>
+  `;
+});
