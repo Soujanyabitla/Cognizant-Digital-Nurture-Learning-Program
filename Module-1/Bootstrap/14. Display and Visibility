@@ -40,4 +40,7 @@ Sidebar Layout:
     </main>
   </div>
 </div>
+Sample usage in HTML
+<link rel="stylesheet" href="custom.css" />
+
 
