@@ -1,0 +1,13 @@
+Exercise 16.1: Fixed Footer with position-fixed bottom-0
+<footer class="position-fixed bottom-0 w-100 bg-dark text-white text-center py-3">
+  © 2025 Event Portal. All rights reserved.
+</footer>
+
+Exercise 16.2: Overlay a Badge Using position-relative and position-absolute
+<div class="position-relative d-inline-block">
+  <img src="https://via.placeholder.com/200" alt="Event" class="img-fluid rounded">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    New
+  </span>
+</div>
+
