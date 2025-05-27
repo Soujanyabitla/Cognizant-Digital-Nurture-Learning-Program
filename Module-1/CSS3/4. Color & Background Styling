@@ -1,0 +1,40 @@
+/* ================================
+   Color & Background Styling Section
+   ================================ */
+
+/* Body with fallback background color and background image */
+body {
+  background-color: #003366; /* fallback color in HEX - dark blue */
+  background-image: url('city-council-bg.jpg'); /* replace with your image path */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.9); /* white text with 90% opacity */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Section headers with gradient text */
+.section-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  /* Gradient background clipped to text */
+  background: linear-gradient(90deg, #007BFF, #00C6FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+/* Paragraphs with HEX and RGBA background and text colors */
+p {
+  color: #e0e0e0; /* light gray text */
+  background-color: rgba(0, 51, 102, 0.5); /* semi-transparent navy background */
+  padding: 10px;
+  border-radius: 5px;
+}
