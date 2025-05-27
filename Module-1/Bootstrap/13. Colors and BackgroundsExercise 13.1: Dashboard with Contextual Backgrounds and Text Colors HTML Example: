@@ -1,0 +1,32 @@
+Exercise 13.1: Dashboard with Contextual Backgrounds and Text Colors
+HTML Example:
+<div class="container my-5">
+  <h2 class="mb-4">Dashboard Overview</h2>
+  <div class="row g-3">
+    <div class="col-md-3 p-3 bg-primary text-white rounded">
+      <h5>Users</h5>
+      <p class="fs-3">1,234</p>
+    </div>
+    <div class="col-md-3 p-3 bg-success text-white rounded">
+      <h5>Sales</h5>
+      <p class="fs-3">$45,678</p>
+    </div>
+    <div class="col-md-3 p-3 bg-warning text-dark rounded">
+      <h5>Pending Orders</h5>
+      <p class="fs-3">56</p>
+    </div>
+    <div class="col-md-3 p-3 bg-danger text-white rounded">
+      <h5>Alerts</h5>
+      <p class="fs-3">7</p>
+    </div>
+  </div>
+</div>
+
+Exercise 13.2: Background Gradient with Dark Background and White Text
+HTML Example:
+<div class="container my-5 p-4 rounded bg-gradient bg-dark text-white text-center">
+  <h2>Dark Gradient Section</h2>
+  <p>This section uses <code>bg-gradient</code> combined with <code>bg-dark</code> and white text.</p>
+  <button class="btn btn-light">Learn More</button>
+</div>
+
