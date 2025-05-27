@@ -1,0 +1,19 @@
+public class PatternMatchingSwitchDemo {
+    public static void printObjectType(Object obj) {
+        switch (obj) {
+            case Integer i -> System.out.println("Integer with value " + i);
+            case String s -> System.out.println("String with value \"" + s + "\"");
+            case Double d -> System.out.println("Double with value " + d);
+            case null -> System.out.println("Null value");
+            default -> System.out.println("Unknown type: " + obj.getClass().getName());
+        }
+    }
+
+    public static void main(String[] args) {
+        printObjectType(42);
+        printObjectType("Hello");
+        printObjectType(3.14);
+        printObjectType(null);
+        printObjectType(true);
+    }
+}
