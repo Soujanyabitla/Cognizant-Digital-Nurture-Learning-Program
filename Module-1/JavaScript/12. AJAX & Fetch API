@@ -1,0 +1,56 @@
+HTML
+
+<form id="registrationForm">
+  <input type="text" name="name" placeholder="Name" required /><br />
+  <input type="email" name="email" placeholder="Email" required /><br />
+  <select name="event">
+    <option value="Jazz Night">Jazz Night</option>
+    <option value="AI Conference">AI Conference</option>
+    <option value="Football Match">Football Match</option>
+  </select><br />
+  <button type="submit">Register</button>
+</form>
+
+<div id="message"></div>
+
+JavaScript with fetch(), setTimeout(), and Status Messages
+
+const form = document.getElementById("registrationForm");
+const messageBox = document.getElementById("message");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const { name, email, event: selectedEvent } = form.elements;
+
+  const userData = {
+    name: name.value,
+    email: email.value,
+    event: selectedEvent.value,
+  };
+
+  messageBox.textContent = "Submitting your registration...";
+
+  // Simulate delayed response using setTimeout
+  setTimeout(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to submit");
+        return response.json();
+      })
+      .then(data => {
+        messageBox.innerHTML = `<p style="color:green">✅ Registration successful! ID: ${data.id}</p>`;
+        form.reset();
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        messageBox.innerHTML = `<p style="color:red">❌ Registration failed. Please try again.</p>`;
+      });
+  }, 2000); // simulate 2-second delay
+});
