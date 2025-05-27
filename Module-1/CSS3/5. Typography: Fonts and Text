@@ -1,0 +1,43 @@
+/* Import Google Fonts: Montserrat for headings, Roboto for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;1,400&display=swap');
+
+/* ================================
+   Typography Styling Section
+   ================================ */
+
+/* Body text styling */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 20px;
+}
+
+/* Headings use Montserrat font with bold weight */
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+/* Example of a section title */
+h2.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;  /* uppercase text */
+  letter-spacing: 2px;        /* space between letters */
+  text-align: center;         /* center aligned */
+  color: #0056b3;
+}
+
+/* Paragraphs with description styling */
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;         /* italic style */
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;        /* justified text */
+  letter-spacing: 0.5px;
+  color: #555555;
+}
