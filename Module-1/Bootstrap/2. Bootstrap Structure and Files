@@ -1,0 +1,31 @@
+sample HTML page that includes both Bootstrap CSS and its JavaScript plugins via bootstrap.bundle.min.js.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Plugin Example</title>
+
+  <!-- Bootstrap CSS (local) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2>Collapse Example</h2>
+    <p>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#demo" role="button" aria-expanded="false" aria-controls="demo">
+        Toggle Content
+      </a>
+    </p>
+    <div class="collapse" id="demo">
+      <div class="card card-body">
+        This is collapsible content powered by Bootstrap's JS!
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS with Popper (local) -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
