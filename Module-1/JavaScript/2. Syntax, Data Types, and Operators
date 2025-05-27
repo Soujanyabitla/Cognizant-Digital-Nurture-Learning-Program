@@ -1,0 +1,22 @@
+// Define event details
+const eventName = "Community Clean-Up Day";
+const eventDate = "2025-06-15";
+let availableSeats = 30;
+
+// Display event info using template literals
+const eventInfo = `Event: ${eventName}\nDate: ${eventDate}\nAvailable Seats: ${availableSeats}`;
+console.log(eventInfo);
+
+// Simulate a user registering for the event
+console.log("User registered for the event.");
+availableSeats--; // One seat taken
+
+// Updated seat count
+console.log(`Updated Available Seats: ${availableSeats}`);
+
+// Another user cancels
+console.log("A user canceled their registration.");
+availableSeats++; // Seat becomes available again
+
+// Final seat count
+console.log(`Final Available Seats: ${availableSeats}`);
