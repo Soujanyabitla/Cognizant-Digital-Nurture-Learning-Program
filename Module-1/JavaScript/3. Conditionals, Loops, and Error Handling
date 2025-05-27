@@ -1,0 +1,47 @@
+// Sample list of events
+const events = [
+  { name: "Community Clean-Up Day", date: "2025-06-15", seats: 10 },
+  { name: "Food Drive", date: "2024-12-01", seats: 0 },           // Full event
+  { name: "Tree Planting", date: "2023-05-20", seats: 5 },         // Past event (assuming today > 2023-05-20)
+];
+
+// Helper to check if date is in the future
+function isUpcoming(dateStr) {
+  const today = new Date();
+  const eventDate = new Date(dateStr);
+  return eventDate >= today;
+}
+
+// Display valid events
+console.log("Upcoming events with available seats:");
+
+events.forEach(event => {
+  if (isUpcoming(event.date) && event.seats > 0) {
+    console.log(`- ${event.name} on ${event.date} (${event.seats} seats available)`);
+  }
+});
+
+// Registration function with error handling
+function register(event) {
+  try {
+    if (!isUpcoming(event.date)) {
+      throw new Error("Cannot register for past event.");
+    }
+    if (event.seats <= 0) {
+      throw new Error("No seats available.");
+    }
+
+    event.seats--;  // reduce seat count
+    console.log(`Registered successfully for ${event.name}. Seats left: ${event.seats}`);
+
+  } catch (error) {
+    console.error(`Registration failed: ${error.message}`);
+  }
+}
+
+// Test registration
+console.log("\nAttempt to register for events:");
+
+events.forEach(event => {
+  register(event);
+});
