@@ -1,0 +1,24 @@
+Exercise 11.1: Profile Card using card, card-body, card-title, and card-img-top
+HTML Example:
+<div class="container mt-5" style="max-width: 300px;">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Profile Picture">
+    <div class="card-body text-center">
+      <h5 class="card-title">Jane Doe</h5>
+      <p class="card-text">Web Developer & Speaker</p>
+      <a href="#" class="btn btn-primary">View Profile</a>
+    </div>
+  </div>
+</div>
+
+Exercise 11.2: Media Object Layout
+Modern Flex-Based Media Object:
+<div class="container mt-5">
+  <div class="d-flex align-items-start">
+    <img src="https://via.placeholder.com/100" class="me-3 rounded" alt="Thumbnail">
+    <div>
+      <h5>Conference Announcement</h5>
+      <p class="mb-0">Join us for an exciting event with leading tech experts from around the world. Early bird registration is open now.</p>
+    </div>
+  </div>
+</div>
