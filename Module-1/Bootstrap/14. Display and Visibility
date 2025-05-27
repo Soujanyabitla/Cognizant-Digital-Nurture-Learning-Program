@@ -1,0 +1,43 @@
+Exercise 14.1: Using d-none, d-md-block, d-lg-flex for Responsive Show/Hide
+Example HTML:
+<div class="container my-4">
+  <h3>Responsive Display Example</h3>
+
+  <!-- Hidden on all screens -->
+  <div class="d-none bg-warning p-3 mb-2">
+    This box is hidden on all screen sizes (d-none).
+  </div>
+
+  <!-- Visible only on md (≥768px) and up -->
+  <div class="d-none d-md-block bg-success text-white p-3 mb-2">
+    Visible on medium screens and larger (d-md-block).
+  </div>
+
+  <!-- Flex on large screens (≥992px), hidden otherwise -->
+  <div class="d-none d-lg-flex bg-primary text-white p-3 mb-2 justify-content-center">
+    Flex container on large screens and bigger (d-lg-flex).
+  </div>
+</div>
+Exercise 14.2: Responsive Sidebar Visible on Tablets and Above
+Sidebar Layout:
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar: hidden on xs and sm, visible md+ -->
+    <nav class="col-md-3 d-none d-md-block bg-light vh-100 p-3 border">
+      <h5>Sidebar Menu</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content: full width on xs-sm, remaining width on md+ -->
+    <main class="col-12 col-md-9 p-4">
+      <h2>Main Content Area</h2>
+      <p>This section is full width on small devices but shrinks on md+ to make room for the sidebar.</p>
+    </main>
+  </div>
+</div>
+
