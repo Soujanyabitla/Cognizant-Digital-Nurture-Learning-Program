@@ -1,0 +1,59 @@
+// Event list
+const events = [
+  { name: "Community Clean-Up Day", category: "Environment", seats: 10 },
+  { name: "Food Drive", category: "Charity", seats: 5 },
+  { name: "Tree Planting", category: "Environment", seats: 3 },
+];
+
+// 1. addEvent() - adds a new event to the list
+function addEvent(event) {
+  events.push(event);
+  console.log(`Event "${event.name}" added.`);
+}
+
+// 2. registerUser() - registers a user for an event, tracking seats and category registrations using closure
+function registrationTracker(category) {
+  let totalRegistrations = 0; // closure variable
+
+  return function register(eventName) {
+    const event = events.find(e => e.name === eventName && e.category === category);
+    if (!event) {
+      console.log(`No event found with name "${eventName}" in category "${category}".`);
+      return;
+    }
+    if (event.seats <= 0) {
+      console.log(`No seats available for "${eventName}".`);
+      return;
+    }
+    event.seats--;
+    totalRegistrations++;
+    console.log(`User registered for "${eventName}". Seats left: ${event.seats}. Total registered in category "${category}": ${totalRegistrations}`);
+  };
+}
+
+// 3. filterEventsByCategory() - filters events dynamically using a callback
+function filterEventsByCategory(callback) {
+  return events.filter(callback);
+}
+
+// Usage:
+
+// Add a new event
+addEvent({ name: "Charity Marathon", category: "Charity", seats: 20 });
+
+// Create registration trackers per category using closure
+const envRegister = registrationTracker("Environment");
+const charityRegister = registrationTracker("Charity");
+
+// Register users
+envRegister("Tree Planting");
+envRegister("Community Clean-Up Day");
+charityRegister("Food Drive");
+charityRegister("Charity Marathon");
+
+// Filter events dynamically
+const environmentEvents = filterEventsByCategory(event => event.category === "Environment");
+console.log("Environment Events:", environmentEvents);
+
+const charityEventsWithSeats = filterEventsByCategory(event => event.category === "Charity" && event.seats > 0);
+console.log("Charity Events with seats:", charityEventsWithSeats);
