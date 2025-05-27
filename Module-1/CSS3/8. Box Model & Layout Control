@@ -1,0 +1,34 @@
+/* ================================
+   Box Model & Layout Control
+   ================================ */
+
+/* Event card layout styling */
+.eventCard {
+  border: 2px solid #007BFF;     /* solid border around card */
+  padding: 20px;                 /* inner spacing */
+  margin: 15px 0;                /* vertical spacing between cards */
+  border-radius: 8px;            /* rounded corners */
+  background-color: #f0f8ff;     /* light background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+/* Highlight selected form field with an outline */
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #28a745;    /* green outline on focus */
+  outline-offset: 2px;
+}
+
+/* Visibility comparison (for demo/testing purposes) */
+.hidden-box {
+  visibility: hidden;            /* element takes up space but not visible */
+  background-color: #ffd;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
+
+.none-box {
+  display: none;                 /* element is completely removed from layout */
+  background-color: #ffd;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
