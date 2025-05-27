@@ -1,0 +1,19 @@
+public class OperatorPrecedence {
+    public static void main(String[] args) {
+        // Expression combining multiple operators
+        int result1 = 10 + 5 * 2;
+        int result2 = (10 + 5) * 2;
+        int result3 = 20 - 8 / 4 + 3;
+
+        // Display the results
+        System.out.println("Result 1 (10 + 5 * 2): " + result1);
+        System.out.println("Result 2 ((10 + 5) * 2): " + result2);
+        System.out.println("Result 3 (20 - 8 / 4 + 3): " + result3);
+
+        // Explanation of order of operations
+        System.out.println("\nExplanation:");
+        System.out.println("Result 1: Multiplication (*) has higher precedence than addition (+), so 5 * 2 = 10, then 10 + 10 = 20.");
+        System.out.println("Result 2: Parentheses () are evaluated first, so 10 + 5 = 15, then 15 * 2 = 30.");
+        System.out.println("Result 3: Division (/) is done before subtraction and addition. 8 / 4 = 2, then 20 - 2 + 3 = 21.");
+    }
+}
