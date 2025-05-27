@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find Nearby Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Event Finder</h1>
+  <button onclick="findNearbyEvents()">Find Nearby Events</button>
+  <div id="output">Click the button to find your location.</div>
+
+  <script>
+    function findNearbyEvents() {
+      const output = document.getElementById("output");
+
+      if (!navigator.geolocation) {
+        output.textContent = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      output.textContent = "Locating...";
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude.toFixed(6);
+          const longitude = position.coords.longitude.toFixed(6);
+          output.innerHTML = `
+            <strong>Your Location:</strong><br>
+            Latitude: ${latitude}<br>
+            Longitude: ${longitude}<br><br>
+            (This is where nearby events could be listed.)
+          `;
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              output.textContent = "Permission denied. Please allow location access.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              output.textContent = "Location unavailable. Please try again later.";
+              break;
+            case error.TIMEOUT:
+              output.textContent = "Request timed out. Please try again.";
+              break;
+            default:
+              output.textContent = "An unknown error occurred.";
+              break;
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000, // 10 seconds
+          maximumAge: 0
+        }
+      );
+    }
+  </script>
+
+</body>
+</html>
