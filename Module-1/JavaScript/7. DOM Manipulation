@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Events</title>
+  <style>
+    .event-card {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 10px;
+      max-width: 300px;
+    }
+    .event-name {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    button {
+      margin-top: 8px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Community Events</h1>
+  <div id="events-container"></div>
+
+  <script>
+    // Sample events array
+    const events = [
+      { id: 1, name: "Community Clean-Up Day", seats: 5 },
+      { id: 2, name: "Jazz Night", seats: 0 },
+      { id: 3, name: "Food Drive", seats: 3 }
+    ];
+
+    const container = document.querySelector('#events-container');
+
+    // Render events dynamically
+    function renderEvents() {
+      container.innerHTML = ''; // Clear old content
+
+      events.forEach(event => {
+        const card = document.createElement('div');
+        card.className = 'event-card';
+
+        const title = document.createElement('div');
+        title.className = 'event-name';
+        title.textContent = event.name;
+        card.appendChild(title);
+
+        const seatsInfo = document.createElement('div');
+        seatsInfo.textContent = `Seats available: ${event.seats}`;
+        card.appendChild(seatsInfo);
+
+        // Register button
+        const registerBtn = document.createElement('button');
+        registerBtn.textContent = 'Register';
+        registerBtn.disabled = event.seats === 0;
+        registerBtn.addEventListener('click', () => {
+          if (event.seats > 0) {
+            event.seats--;
+            alert(`Registered for ${event.name}`);
+            renderEvents();
+          }
+        });
+        card.appendChild(registerBtn);
+
+        // Cancel button
+        const cancelBtn = document.createElement('button');
+        cancelBtn.textContent = 'Cancel Registration';
+        cancelBtn.disabled = event.seats === 5; // assuming 5 max seats
+        cancelBtn.addEventListener('click', () => {
+          if (event.seats < 5) {
+            event.seats++;
+            alert(`Canceled registration for ${event.name}`);
+            renderEvents();
+          }
