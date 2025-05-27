@@ -1,0 +1,28 @@
+Exercise 19.1: Set up Bootstrap 5 with Sass using npm
+1. Initialize npm in your project folder
+npm init -y
+2. Install Bootstrap (which includes Sass source files)
+npm install bootstrap
+3. Install a Sass compiler if you don't have one globally
+Install sass (Dart Sass) locally:
+npm install sass --save-dev
+4. Create a custom SCSS file (custom.scss) in your project, e.g.
+// Import Bootstrap's functions first
+@import "node_modules/bootstrap/scss/functions";
+
+// Import variables to override them before Bootstrap's main import
+@import "variables";
+
+// Import the rest of Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+5. Create _variables.scss file alongside custom.scss to override defaults (empty for now)
+Exercise 19.2: Customize Colors and Border Radius in _variables.scss
+
+Example _variables.scss:
+// Customize Bootstrap primary color and border radius
+
+$primary: #ff5722;        // Custom orange-ish primary color
+$border-radius: 1rem;     // Larger border radius for rounded corners
+
+6. Compile your custom SCSS to CSS
+npx sass custom.scss custom.css --style=compressed
