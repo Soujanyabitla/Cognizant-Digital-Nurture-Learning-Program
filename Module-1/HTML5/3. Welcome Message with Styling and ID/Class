@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome Banner Example</title>
+  <title>Welcome Banner</title>
   <style>
-    /* Internal CSS for ID */
+    /* Internal CSS */
     #welcomeBanner {
       background-color: blue;
       color: white;
       padding: 20px;
+      font-size: 24px;
       text-align: center;
     }
 
-    /* Internal CSS for class */
     .highlight {
       background-color: yellow;
       padding: 5px;
@@ -22,15 +22,17 @@
 </head>
 <body>
 
-  <!-- Welcome Banner -->
+  <!-- Block tag with ID and internal CSS -->
   <div id="welcomeBanner">
-    <h1>Welcome Back, User!</h1>
-    <p>We're glad to see you again.</p>
-    <p>
-      <span style="color: red; font-weight: bold;">Special Offer:</span>
-      <span class="highlight">Get 20% off your next event ticket!</span>
-    </p>
+    Welcome back, valued user!
   </div>
+
+  <!-- Inline tag with inline styles -->
+  <p>Don't miss our <span style="color: red; font-weight: bold;">special offer</span> today!</p>
+
+  <!-- Using class for visual emphasis -->
+  <p class="highlight">Your account has been upgraded.</p>
+  <p>Check out your <span class="highlight">new features</span> now.</p>
 
 </body>
 </html>
