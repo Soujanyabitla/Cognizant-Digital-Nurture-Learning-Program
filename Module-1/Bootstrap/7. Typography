@@ -1,0 +1,20 @@
+Exercise 7.1: Typography Utilities (display-1, lead, text-muted, fw-bold, etc.)
+HTML Example:
+<div class="container mt-4">
+  <h1 class="display-1">Welcome to the Event Portal</h1>
+  <p class="lead">This portal helps you browse and register for upcoming events effortlessly.</p>
+  
+  <p>This is a <span class="fw-bold">bold</span> statement and this is <span class="text-muted">muted text</span>.</p>
+
+  <p class="fs-4">This is a slightly larger text using <code>.fs-4</code></p>
+  
+  <p class="fst-italic">This paragraph uses <code>.fst-italic</code> to display italicized text.</p>
+</div>
+
+Exercise 7.2: Text Transformation Utilities (text-uppercase, text-lowercase, text-capitalize)
+ HTML Example:
+<div class="container mt-5">
+  <p class="text-uppercase">this text is uppercase</p>
+  <p class="text-lowercase">THIS TEXT IS LOWERCASE</p>
+  <p class="text-capitalize">this sentence is capitalized automatically</p>
+</div>
