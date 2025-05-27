@@ -1,0 +1,16 @@
+Exercise 15.1: Borders and Rounded Circle on an Image
+<div class="container my-5 text-center">
+  <img src="https://via.placeholder.com/150" alt="Profile" 
+       class="border border-primary border-3 rounded-circle">
+</div>
+
+Exercise 15.2: Card with Shadows and Rounded Pill Shape
+<div class="container my-5" style="max-width: 400px;">
+  <div class="card shadow-lg rounded-pill p-4 text-center">
+    <h4 class="card-title mb-3">Special Offer</h4>
+    <p class="card-text mb-4">
+      Get 30% off on your next event registration!
+    </p>
+    <button class="btn btn-primary rounded-pill px-4 py-2">Claim Offer</button>
+  </div>
+</div>
