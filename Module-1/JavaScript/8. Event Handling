@@ -1,0 +1,55 @@
+HTML
+
+<input type="text" id="searchBox" placeholder="Search by name..." />
+<select id="categoryFilter">
+  <option value="all">All Categories</option>
+  <option value="music">Music</option>
+  <option value="tech">Tech</option>
+  <option value="sports">Sports</option>
+</select>
+
+<div class="event" data-category="music" data-name="Jazz Night">
+  <h3>Jazz Night</h3>
+  <button class="registerBtn">Register</button>
+</div>
+
+<div class="event" data-category="tech" data-name="AI Conference">
+  <h3>AI Conference</h3>
+  <button class="registerBtn">Register</button>
+</div>
+
+<div class="event" data-category="sports" data-name="Football Match">
+  <h3>Football Match</h3>
+  <button class="registerBtn">Register</button>
+</div>
+
+JavaScript
+
+<script>
+// Handle "Register" button click
+document.querySelectorAll(".registerBtn").forEach(button => {
+  button.onclick = function () {
+    const eventName = this.parentElement.querySelector("h3").textContent;
+    alert("Registered for: " + eventName);
+  };
+});
+
+// Handle category filtering
+document.getElementById("categoryFilter").onchange = function () {
+  const selectedCategory = this.value;
+  document.querySelectorAll(".event").forEach(event => {
+    const category = event.getAttribute("data-category");
+    event.style.display = (selectedCategory === "all" || category === selectedCategory) ? "block" : "none";
+  });
+};
+
+// Handle name search with keydown
+document.getElementById("searchBox").addEventListener("keydown", function () {
+  const query = this.value.toLowerCase();
+  document.querySelectorAll(".event").forEach(event => {
+    const name = event.getAttribute("data-name").toLowerCase();
+    event.style.display = name.includes(query) ? "block" : "none";
+  });
+});
+</script>
+
