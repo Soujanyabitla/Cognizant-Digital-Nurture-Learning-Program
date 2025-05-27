@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Banner Example</title>
+  <style>
+    /* Internal CSS for ID */
+    #welcomeBanner {
+      background-color: blue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Internal CSS for class */
+    .highlight {
+      background-color: yellow;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">
+    <h1>Welcome Back, User!</h1>
+    <p>We're glad to see you again.</p>
+    <p>
+      <span style="color: red; font-weight: bold;">Special Offer:</span>
+      <span class="highlight">Get 20% off your next event ticket!</span>
+    </p>
+  </div>
+
+</body>
+</html>
