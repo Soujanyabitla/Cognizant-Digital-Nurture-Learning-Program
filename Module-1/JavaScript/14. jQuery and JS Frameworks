@@ -1,0 +1,43 @@
+1. Handle click events (like $('#registerBtn').click(...))
+
+const registerBtn = document.getElementById("registerBtn");
+registerBtn.addEventListener("click", function() {
+  alert("Registered successfully!");
+});
+
+2. Fade In / Fade Out event cards (similar to .fadeIn() / .fadeOut())
+CSS (for fading)
+
+.eventCard {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.eventCard.fade-out {
+  opacity: 0;
+  pointer-events: none; /* optional: disable interactions while hidden */
+}
+
+.eventCard.fade-in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+JavaScript (to toggle fade)
+
+const eventCards = document.querySelectorAll(".eventCard");
+
+function fadeOut(element) {
+  element.classList.add("fade-out");
+  element.classList.remove("fade-in");
+}
+
+function fadeIn(element) {
+  element.classList.remove("fade-out");
+  element.classList.add("fade-in");
+}
+
+// Example usage:
+eventCards.forEach(card => fadeOut(card)); // fade out all
+// or
+eventCards.forEach(card => fadeIn(card)); // fade in all
