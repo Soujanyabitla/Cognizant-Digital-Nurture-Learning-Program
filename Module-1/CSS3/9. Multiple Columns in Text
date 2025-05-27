@@ -1,0 +1,17 @@
+/* ================================
+   Multi-Column Text Layout
+   ================================ */
+
+/* News article styled with two columns */
+.news-article {
+  column-count: 2;                /* split text into 2 columns */
+  column-gap: 30px;               /* space between columns */
+  column-rule: 1px solid gray;    /* vertical line between columns */
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
