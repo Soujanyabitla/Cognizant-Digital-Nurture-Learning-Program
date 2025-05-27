@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Events Gallery</title>
+  <style>
+    .event-img {
+      border: 3px solid #444;
+      width: 200px;
+      height: 150px;
+      border-radius: 8px;
+    }
+
+    table {
+      margin: 20px auto;
+      border-spacing: 20px;
+      text-align: center;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Community Events Gallery</h2>
+
+  <table>
+    <caption>Highlights from Recent Community Events</caption>
+    <tr>
+      <td>
+        <img src="event1.jpg" alt="Charity Walk 2024" title="Charity Walk 2024" class="event-img"><br>
+        Charity Walk
+      </td>
+      <td>
+        <img src="event2.jpg" alt="Art Fair" title="Community Art Fair" class="event-img"><br>
+        Art Fair
+      </td>
+      <td>
+        <img src="event3.jpg" alt="Outdoor Movie Night" title="Outdoor Movie Night" class="event-img"><br>
+        Movie Night
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="event4.jpg" alt="Food Drive" title="Annual Food Drive" class="event-img"><br>
+        Food Drive
+      </td>
+      <td>
+        <img src="event5.jpg" alt="Kids Talent Show" title="Kids Talent Show" class="event-img"><br>
+        Talent Show
+      </td>
+      <td>
+        <img src="event6.jpg" alt="Community Cleanup" title="Neighborhood Cleanup" class="event-img"><br>
+        Cleanup Day
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
