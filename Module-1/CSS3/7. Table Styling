@@ -1,0 +1,37 @@
+/* ================================
+   Table Styling Section
+   ================================ */
+
+/* General table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;     /* Merge borders into single lines */
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;            /* Center-align table content */
+}
+
+/* Table headers */
+th {
+  background-color: #004080;     /* Dark blue header background */
+  color: white;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Table cells */
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;     /* Light background for cells */
+}
+
+/* Zebra striping on even rows */
+tr:nth-child(even) {
+  background-color: #e6f0ff;     /* Very light blue for zebra rows */
+}
+
+/* Optional: hover effect for rows */
+tr:hover {
+  background-color: #d9ecff;     /* Slightly darker blue on hover */
+}
