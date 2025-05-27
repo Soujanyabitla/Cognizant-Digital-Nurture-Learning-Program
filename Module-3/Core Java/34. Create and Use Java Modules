@@ -1,0 +1,30 @@
+com.utils/module-info.java
+module com.utils {
+    exports com.utils;
+}
+
+com/utils/Utils.java
+package com.utils;
+
+public class Utils {
+    public static void greet() {
+        System.out.println("Hello from Utils!");
+    }
+}
+
+
+com.greetings/module-info.java
+module com.greetings {
+    requires com.utils;
+}
+
+com/greetings/Main.java
+package com.greetings;
+
+import com.utils.Utils;
+
+public class Main {
+    public static void main(String[] args) {
+        Utils.greet();
+    }
+}
