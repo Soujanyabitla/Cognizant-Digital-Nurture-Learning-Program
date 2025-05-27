@@ -1,0 +1,28 @@
+/* ================================
+   Buttons Styles Section
+   ================================ */
+
+/* Style for main Call-To-Action (CTA) button */
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for main CTA button */
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled state for CTA button */
+.cta-button:disabled {
+  background-color: #a0c8ff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
