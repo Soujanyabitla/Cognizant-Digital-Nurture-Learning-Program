@@ -1,0 +1,70 @@
+/* ================================
+   Base Styles (Desktop First)
+   ================================ */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu {
+  display: flex;                  /* horizontal menu */
+  justify-content: center;
+  background-color: #004080;
+  padding: 10px 0;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.hero-image {
+  width: 80vw;                    /* responsive image width */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.content {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+/* ================================
+   Responsive Styles for Tablets & Phones
+   ================================ */
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav-menu {
+    flex-direction: column;       /* stack nav links vertically */
+    align-items: center;
+  }
+
+  .nav-menu a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .hero-image {
+    width: 95vw;                  /* shrink image for smaller screens */
+  }
+
+  .content {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
