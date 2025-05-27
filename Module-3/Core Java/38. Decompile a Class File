@@ -1,0 +1,16 @@
+public class HelloWorld {
+    private String message;
+
+    public HelloWorld(String message) {
+        this.message = message;
+    }
+
+    public void sayHello() {
+        System.out.println("Message: " + message);
+    }
+
+    public static void main(String[] args) {
+        HelloWorld hw = new HelloWorld("Hello from decompiled class!");
+        hw.sayHello();
+    }
+}
